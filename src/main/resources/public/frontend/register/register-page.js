@@ -75,7 +75,7 @@ async function processRegistration() {
         if(response.ok){
             /* - If status is 201:
             *- Redirect user to login page*/
-            window.location.href = `${BASE_URL}/login`;
+            window.location.href = 'login-page.html';
         }
         else if(response.status == 409){
             throw new Error('User/Email Already Exists!');

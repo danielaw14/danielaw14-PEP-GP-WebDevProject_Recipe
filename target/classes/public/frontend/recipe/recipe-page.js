@@ -302,7 +302,7 @@ logoutButton.addEventListener('click', processLogout);
 
             if(response.ok){
                 sessionStorage.clear;
-                window.location.href = `${BASE_URL}/login`
+                window.location.href = `login-page.html`
             }
             else{
                 throw new Error("Logout Error!");

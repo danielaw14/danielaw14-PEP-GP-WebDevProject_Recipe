@@ -1,7 +1,7 @@
-commit 0b1ad2d1dbbd1d979e1e60f72d0094565cf72589
+commit 04813afd8dcb5ab5802bac81058b81a52f022260
 Author: Daniel Ward <7daniel.ward@gmail.com>
-Date:   Fri Aug 29 23:15:36 2025 +0000
+Date:   Fri Aug 29 23:22:20 2025 +0000
 
-    Testing
+    fixed redirect links
 
- 35 files changed, 342 insertions(+), 58 deletions(-)
+ 7 files changed, 13 insertions(+), 6 deletions(-)

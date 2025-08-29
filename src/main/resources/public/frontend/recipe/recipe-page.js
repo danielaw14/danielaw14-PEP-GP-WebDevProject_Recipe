@@ -275,11 +275,11 @@ logoutButton.addEventListener('click', processLogout);
      */
     function refreshRecipeList() {
         recipeList.innerHTML = "";
-        recipes.forEach(recipe => {
+        for(recipe in recipes){
             const li = document.createElement("li");
             li.textContent = `${recipe.name}: ${recipe.instructions}`;
             recipeList.appendChild(li);
-        });
+        };
     }
 
     /**

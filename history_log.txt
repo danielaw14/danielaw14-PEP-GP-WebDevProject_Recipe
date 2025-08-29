@@ -1,7 +1,7 @@
-commit 04813afd8dcb5ab5802bac81058b81a52f022260
+commit 6a2e1d863fd9bf889931e7ea371964dccae34573
 Author: Daniel Ward <7daniel.ward@gmail.com>
-Date:   Fri Aug 29 23:22:20 2025 +0000
+Date:   Fri Aug 29 23:26:21 2025 +0000
 
-    fixed redirect links
+    fixed recipes h1 title and forEach error in recipes.
 
- 7 files changed, 13 insertions(+), 6 deletions(-)
+ 5 files changed, 10 insertions(+), 10 deletions(-)

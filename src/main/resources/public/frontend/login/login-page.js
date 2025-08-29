@@ -88,7 +88,7 @@ async function processLogin() {
             window.location.href = 'recipe-page.html';
         }
         else if(request.status == 401){
-            throw new Error("Incorrect login!");
+            alert("Incorrect login!");
         }
         // TODO: If response status is 401
         // - Alert the user with "Incorrect login!"

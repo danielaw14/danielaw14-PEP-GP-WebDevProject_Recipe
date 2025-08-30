@@ -63,12 +63,10 @@ async function processLogin() {
         // TODO: Send POST request to http://localhost:8081/login using fetch with requestOptions
         let response = await fetch(`${BASE_URL}/login`, requestOptions);
 
-        if(request.status == 200){
+        if(response.status == 200){
             let text = await response.json;
-            const [token, isAdmin] = text.split(" ");
-            sessionStorage.setItem("auth-token", token);
-            sessionStorage.setItem("is-admin", isAdmin);
-        
+            const [token, isAdmin] = String(text).split(" ");
+            sessionStorage.setItem(token, isAdmin);
         // TODO: If response status is 200
         // - Read the response as text
         // - Response will be a space-separated string: "token123 true"
@@ -79,9 +77,8 @@ async function processLogin() {
         
         // TODO: Add a small delay (e.g., 500ms) using setTimeout before redirecting
         // - Use window.location.href to redirect to the recipe page
-            setTimeout(() =>{
+            setTimeout(500);
             window.location.href = 'recipe-page.html';
-            }, 500);
         }
         else if(request.status == 401){
             throw new Error("Incorrect login!");

@@ -1,7 +1,7 @@
-commit f8e72c5ef2d4c9062ad08ee95ab665a818edfc31
+commit 6e4e1e93a41b9cba78f49e1152c84d8d0057daaa
 Author: Daniel Ward <7daniel.ward@gmail.com>
-Date:   Fri Aug 29 23:31:41 2025 +0000
+Date:   Sat Aug 30 00:10:07 2025 +0000
 
-    Fixed alert("Incorrect Login1") issue.
+    fixed login page issues
 
- 3 files changed, 6 insertions(+), 6 deletions(-)
+ 3 files changed, 24 insertions(+), 32 deletions(-)

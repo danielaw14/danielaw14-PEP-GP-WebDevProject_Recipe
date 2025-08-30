@@ -1,7 +1,7 @@
-commit 9fcc5168239a81521444cf73ced7ea1a6f9371fd
+commit 7e2011348a6b8644c0ebeed40c350affc8995f66
 Author: Daniel Ward <7daniel.ward@gmail.com>
-Date:   Sat Aug 30 01:18:55 2025 +0000
+Date:   Sat Aug 30 01:26:08 2025 +0000
 
-    fixed minor issues in mutplie classes -ex. misspellings
+    rerunning tests
 
- 7 files changed, 22 insertions(+), 24 deletions(-)
+ 5 files changed, 8 insertions(+), 8 deletions(-)

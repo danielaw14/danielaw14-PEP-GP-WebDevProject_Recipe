@@ -16,24 +16,24 @@ window.addEventListener("DOMContentLoaded", () => {
      * - Admin link and logout button
      * - Search input
     */
-var adminLink = document.getElementById("admin-link");
-var logoutButton = document.getElementById("logout-button");
+const adminLink = document.getElementById("admin-link");
+const logoutButton = document.getElementById("logout-button");
 
-var searchInput = document.getElementById("search-input");
-var searchButton = document.getElementById("search-button");
+const searchInput = document.getElementById("search-input");
+const searchButton = document.getElementById("search-button");
 
-var recipeList = document.getElementById("recipe-list");
+const recipeList = document.getElementById("recipe-list");
 
-var addRecipeInput = document.getElementById("add-recipe-name-input");
-var addRecipeInstructions = document.getElementById("add-recipe-instructions-input");
-var addRecipeButton = document.getElementById("add-recipe-submit-input");
+const addRecipeInput = document.getElementById("add-recipe-name-input");
+const addRecipeInstructions = document.getElementById("add-recipe-instructions-input");
+const addRecipeButton = document.getElementById("add-recipe-submit-input");
 
-var updateRecipeInput = document.getElementById("update-recipe-name-input");
-var updateRecipeInstructions = document.getElementById("update-recipe-instructions-input");
-var updateRecipeButton = document.getElementById("update-recipe-submit-input");
+const updateRecipeInput = document.getElementById("update-recipe-name-input");
+const updateRecipeInstructions = document.getElementById("update-recipe-instructions-input");
+const updateRecipeButton = document.getElementById("update-recipe-submit-input");
 
-var deleteRecipeInput = document.getElementById("delete-recipe-name-input");
-var deleteRecipeButton = document.getElementById("delete-recipe-submit-input");
+const deleteRecipeInput = document.getElementById("delete-recipe-name-input");
+const deleteRecipeButton = document.getElementById("delete-recipe-submit-input");
     /*
      * TODO: Show logout button if auth-token exists in sessionStorage
      */

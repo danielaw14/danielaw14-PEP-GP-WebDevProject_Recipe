@@ -44,11 +44,13 @@ if (sessionStorage.getItem("auth-token") != null){
      * TODO: Show admin link if is-admin flag in sessionStorage is "true"
      */
 function displayAdminLink(){
-
+    const adminLink = document.getElementById("admin-link");
     if(sessionStorage.getItem("is-admin") === "true")
     {
-        const adminLink = document.getElementById("admin-link");
         adminLink.hidden = false;
+    }
+    else{
+        adminLink.hidden = true;
     }
 }
 
@@ -68,8 +70,11 @@ logoutButton.addEventListener('click', processLogout);
     /*
      * TODO: On page load, call getRecipes() to populate the list
      */
-    getRecipes();
     displayAdminLink();
+    
+    getRecipes();
+
+    wwindow.displayAdminLink = displayAdminLink;
     /**
      * TODO: Search Recipes Function
      * - Read search term from input field
@@ -80,7 +85,7 @@ logoutButton.addEventListener('click', processLogout);
     async function searchRecipes() {
         let search = searchInput.value.trim();
         try{
-            let response = await fetch(`${BASE_URL}/fetch/?name=${encodeURIComponent(search)}`);
+            let response = await fetch(`${BASE_URL}/recipes?name=${encodeURIComponent(search)}`);
             if(response.ok){
                 recipes = await response.json();
                 refreshRecipeList();
@@ -112,7 +117,7 @@ logoutButton.addEventListener('click', processLogout);
             return;
         }
 
-        const requestBody = {add, addInst};
+        const requestBody = {name: add, instructions: addInst};
 
         const requestOptions = {
             method: "POST",
@@ -120,8 +125,6 @@ logoutButton.addEventListener('click', processLogout);
                 "Content-Type": "application/json",
                 "Authorization": "Bearer " + sessionStorage.getItem("auth-token")
             },
-            redirect: "follow",
-            referrerPolicy: "no-referrer",
             body: JSON.stringify(requestBody)
         };
 
@@ -167,7 +170,7 @@ logoutButton.addEventListener('click', processLogout);
             return;
         }
 
-        const requestBody = {updateInst};
+        const requestBody = {name: update, instructions: updateInst};
         
         const requestOptions = {
             method: "Put",

@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
      * - Admin link and logout button
      * - Search input
     */
-const adminLink = document.getElementById("admin-link");
+
 const logoutButton = document.getElementById("logout-button");
 
 const searchInput = document.getElementById("search-input");
@@ -43,10 +43,15 @@ if (sessionStorage.getItem("auth-token") != null){
     /*
      * TODO: Show admin link if is-admin flag in sessionStorage is "true"
      */
-if(sessionStorage.getItem("is-admin") === "true")
-{
-    adminLink.hidden = false;
+function displayAdminLink(){
+
+    if(sessionStorage.getItem("is-admin") === "true")
+    {
+        const adminLink = document.getElementById("admin-link");
+        adminLink.hidden = false;
+    }
 }
+
     /*
      * TODO: Attach event handlers
      * - Add recipe button → addRecipe()
@@ -64,7 +69,7 @@ logoutButton.addEventListener('click', processLogout);
      * TODO: On page load, call getRecipes() to populate the list
      */
     getRecipes();
-
+    displayAdminLink();
     /**
      * TODO: Search Recipes Function
      * - Read search term from input field

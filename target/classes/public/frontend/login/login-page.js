@@ -45,34 +45,29 @@ loginButton.addEventListener('click', processLogin);
 async function processLogin() {
     // TODO: Retrieve username and password from input fields
     // - Trim input and validate that neither is empty
-    username = String(usernameInput.value).trim;
-    password = String(passwordInput.value).trim;
+    username = usernameInput.value.trim();
+    password = passwordInput.value.trim();
 
 
     // TODO: Create a requestBody object with username and password
     const requestBody = {username, password}
     const requestOptions = {
         method: "POST",
-        mode: "cors",
-        cache: "no-cache",
-        credentials: "same-origin",
         headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "*"
         },
-        redirect: "follow",
-        referrerPolicy: "no-referrer",
         body: JSON.stringify(requestBody)
     };
 
     try {
         // TODO: Send POST request to http://localhost:8081/login using fetch with requestOptions
-        let request = await fetch(`${BASE_URL}/login`, requestOptions);
+        let response = await fetch(`${BASE_URL}/login`, requestOptions);
 
         if(request.status == 200){
-            let response = String(request.text).split();
-            sessionStorage.setItem(response[0], response[1]);
+            let text = await response.json;
+            const [token, isAdmin] = text.split(" ");
+            sessionStorage.setItem("auth-token", token);
+            sessionStorage.setItem("is-admin", isAdmin);
         
         // TODO: If response status is 200
         // - Read the response as text
@@ -84,11 +79,12 @@ async function processLogin() {
         
         // TODO: Add a small delay (e.g., 500ms) using setTimeout before redirecting
         // - Use window.location.href to redirect to the recipe page
-            setTimeout(500);
+            setTimeout(() =>{
             window.location.href = 'recipe-page.html';
+            }, 500);
         }
         else if(request.status == 401){
-            alert("Incorrect login!");
+            throw new Error("Incorrect login!");
         }
         // TODO: If response status is 401
         // - Alert the user with "Incorrect login!"

@@ -1,7 +1,7 @@
-commit aafa5e562fdcdfd0474f1093c579a6cec62f14da
+commit 9fcc5168239a81521444cf73ced7ea1a6f9371fd
 Author: Daniel Ward <7daniel.ward@gmail.com>
-Date:   Sat Aug 30 00:56:33 2025 +0000
+Date:   Sat Aug 30 01:18:55 2025 +0000
 
-    test new changes
+    fixed minor issues in mutplie classes -ex. misspellings
 
- 3 files changed, 18 insertions(+), 16 deletions(-)
+ 7 files changed, 22 insertions(+), 24 deletions(-)

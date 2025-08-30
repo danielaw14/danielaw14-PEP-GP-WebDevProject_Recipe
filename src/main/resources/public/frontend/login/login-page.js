@@ -79,9 +79,8 @@ async function processLogin() {
         
         // TODO: Add a small delay (e.g., 500ms) using setTimeout before redirecting
         // - Use window.location.href to redirect to the recipe page
-        setTimeout(() => {
-            const recipePagePath = window.location.href.replace("login-page.html", "recipe-page.html");
-            window.location.href = recipePagePath;}, 500);
+        const recipeUrl = new URL("../recipe/recipe-page.html", window.location.href).href;
+        setTimeout(() => { window.location.href = recipeUrl; }, 500);
         }
         else if(request.status == 401){
             throw new Error("Incorrect login!");

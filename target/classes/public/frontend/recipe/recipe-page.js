@@ -230,7 +230,7 @@ logoutButton.addEventListener('click', processLogout);
         };
         
         try{
-            const response = await fetch(`${BASE_URL}/recipes/${delSearch.id}`);
+            const response = await fetch(`${BASE_URL}/recipes/${delSearch.id}`, requestOptions);
 
             if(response.ok){
                 deleteRecipeInput.value = "";
@@ -303,7 +303,7 @@ logoutButton.addEventListener('click', processLogout);
         };
 
         try{
-            const response = await fetch(`${BASE_URL}/logout`);
+            const response = await fetch(`${BASE_URL}/logout`, requestOptions);
 
             if(response.ok){
                 sessionStorage.clear();

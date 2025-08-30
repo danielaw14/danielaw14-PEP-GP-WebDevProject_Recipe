@@ -4,6 +4,7 @@
 */
 const BASE_URL = "http://localhost:8081"; // backend URL
 
+window.addEventListener("DOMContentLoaded", () => {
 /* 
  * TODO: Get references to DOM elements
  * - username input
@@ -100,4 +101,4 @@ async function processLogin() {
         alert(error.message);
     }
 }
-
+});

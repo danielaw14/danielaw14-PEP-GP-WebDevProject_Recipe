@@ -306,7 +306,7 @@ logoutButton.addEventListener('click', processLogout);
             const response = await fetch(`${BASE_URL}/logout`);
 
             if(response.ok){
-                sessionStorage.clear;
+                sessionStorage.clear();
                 window.location.href = `login-page.html`
             }
             else{

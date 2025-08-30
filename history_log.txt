@@ -1,7 +1,7 @@
-commit cd81f469189fc07d9c32382e3a81773c4d4ec59d
+commit 6727efdca24b75bad77cee300e6270baba08742d
 Author: Daniel Ward <7daniel.ward@gmail.com>
-Date:   Sat Aug 30 01:52:20 2025 +0000
+Date:   Sat Aug 30 02:12:00 2025 +0000
 
-    retest 4
+    made more minor fixes
 
- 3 files changed, 3 insertions(+), 17 deletions(-)
+ 5 files changed, 30 insertions(+), 16 deletions(-)

@@ -94,7 +94,7 @@ async function getIngredients() {
         const response = await fetch(`${BASE_URL}/ingredients`);
 
         if(response.ok){
-            ingredients = await response.json;
+            ingredients = await response.json();
             refreshIngredientList();
         }
     }

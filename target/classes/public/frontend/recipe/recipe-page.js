@@ -25,7 +25,7 @@ var searchButton = document.getElementById("search-button");
 var recipeList = document.getElementById("recipe-list");
 
 var addRecipeInput = document.getElementById("add-recipe-name-input");
-var addRecipeIntructions = document.getElementById("add-recipe-instructions-input");
+var addRecipeInstructions = document.getElementById("add-recipe-instructions-input");
 var addRecipeButton = document.getElementById("add-recipe-submit-input");
 
 var updateRecipeInput = document.getElementById("update-recipe-name-input");
@@ -43,7 +43,7 @@ if (sessionStorage.getItem("auth-token") != null){
     /*
      * TODO: Show admin link if is-admin flag in sessionStorage is "true"
      */
-if(sessionStorage.getItem("auth-token") === "true")
+if(sessionStorage.getItem("is-admin") === "true")
 {
     adminLink.hidden = false;
 }
@@ -77,7 +77,7 @@ logoutButton.addEventListener('click', processLogout);
         try{
             let response = await fetch(`${BASE_URL}/fetch/?name=${encodeURIComponent(search)}`);
             if(response.ok){
-                recipes = await response.json;
+                recipes = await response.json();
                 refreshRecipeList();
             }
             else{
@@ -100,7 +100,7 @@ logoutButton.addEventListener('click', processLogout);
      */
     async function addRecipe() {
         let add = addRecipeInput.value.trim();
-        let addInst = addRecipeIntructions.value.trim();
+        let addInst = addRecipeInstructions.value.trim();
 
         if(!add || !addInst){
             alert("Recipe Name and Instructions must be filled!");
@@ -125,7 +125,7 @@ logoutButton.addEventListener('click', processLogout);
 
             if(request.ok){
                 addRecipeInput.value = "";
-                addRecipeIntructions.value = "";
+                addRecipeInstructions.value = "";
                 await getRecipes();
             }
             else{
@@ -252,7 +252,7 @@ logoutButton.addEventListener('click', processLogout);
         try{
             const response = await fetch(`${BASE_URL}/recipes`);
             if(response.ok){
-                recipes = await response.json;
+                recipes = await response.json();
                 refreshRecipeList();
             }
             else{
@@ -275,7 +275,7 @@ logoutButton.addEventListener('click', processLogout);
      */
     function refreshRecipeList() {
         recipeList.innerHTML = "";
-        for(recipe in recipes){
+        for(recipe of recipes){
             const li = document.createElement("li");
             li.textContent = `${recipe.name}: ${recipe.instructions}`;
             recipeList.appendChild(li);

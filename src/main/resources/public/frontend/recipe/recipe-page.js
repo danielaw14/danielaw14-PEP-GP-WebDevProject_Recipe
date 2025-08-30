@@ -71,10 +71,8 @@ logoutButton.addEventListener('click', processLogout);
      * TODO: On page load, call getRecipes() to populate the list
      */
     displayAdminLink();
-    
     getRecipes();
-
-    wwindow.displayAdminLink = displayAdminLink;
+    window.displayAdminLink = displayAdminLink;
     /**
      * TODO: Search Recipes Function
      * - Read search term from input field

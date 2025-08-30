@@ -45,8 +45,8 @@ loginButton.addEventListener('click', processLogin);
 async function processLogin() {
     // TODO: Retrieve username and password from input fields
     // - Trim input and validate that neither is empty
-    username = usernameInput.value.trim();
-    password = passwordInput.value.trim();
+    let username = usernameInput.value.trim();
+    let password = passwordInput.value.trim();
 
 
     // TODO: Create a requestBody object with username and password
@@ -61,12 +61,13 @@ async function processLogin() {
 
     try {
         // TODO: Send POST request to http://localhost:8081/login using fetch with requestOptions
-        let response = await fetch(`${BASE_URL}/login`, requestOptions);
+        const request = await fetch(`${BASE_URL}/login`, requestOptions);
 
-        if(response.status == 200){
-            let text = await response.json;
+        if(request.status == 200){
+            let text = await request.text();
             const [token, isAdmin] = String(text).split(" ");
-            sessionStorage.setItem(token, isAdmin);
+            sessionStorage.setItem("auth-token", token);
+            sessionStorage.setItem("is-admin", isAdmin);
         // TODO: If response status is 200
         // - Read the response as text
         // - Response will be a space-separated string: "token123 true"

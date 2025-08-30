@@ -1,7 +1,7 @@
-commit 6e4e1e93a41b9cba78f49e1152c84d8d0057daaa
+commit 1cf83da0a9b8b412a7ef8a7e705689f88b1ab898
 Author: Daniel Ward <7daniel.ward@gmail.com>
-Date:   Sat Aug 30 00:10:07 2025 +0000
+Date:   Sat Aug 30 00:37:14 2025 +0000
 
-    fixed login page issues
+    fixed more login issues
 
- 3 files changed, 24 insertions(+), 32 deletions(-)
+ 3 files changed, 12 insertions(+), 18 deletions(-)
